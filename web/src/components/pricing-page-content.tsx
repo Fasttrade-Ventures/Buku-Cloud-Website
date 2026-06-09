@@ -198,7 +198,7 @@ export function PricingPageContent() {
             eyebrow={t.pricing.faq.eyebrow}
             title={t.pricing.faq.title}
           />
-          <div className="mt-12 max-w-[860px]">
+          <div className="mt-12">
             <Faq items={t.pricing.faq.items} />
           </div>
         </div>

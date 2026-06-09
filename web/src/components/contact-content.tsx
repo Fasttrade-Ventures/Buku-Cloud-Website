@@ -8,7 +8,7 @@ import { useT } from "./i18n-provider";
 
 const OFFICE_MAP_URL =
   "https://maps.google.com/?q=Wisma+KFC+Jln+Sultan+Ismail+Kuala+Lumpur";
-const WHATSAPP_DISPLAY = "+60 12-345 6789";
+const WHATSAPP_DISPLAY = "+60 12-680 4697";
 
 export function ContactContent() {
   const t = useT();
@@ -94,7 +94,7 @@ export function ContactContent() {
             eyebrow={t.contact.faqEyebrow}
             title={t.contact.faqTitle}
           />
-          <div className="mt-12 max-w-[860px]">
+          <div className="mt-12">
             <Faq items={t.contact.faqItems} />
           </div>
         </div>

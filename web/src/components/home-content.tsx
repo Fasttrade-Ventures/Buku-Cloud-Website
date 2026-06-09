@@ -237,7 +237,7 @@ export function HomeContent() {
             title={t.home.faq.title}
             size="lg"
           />
-          <div className="mt-12 max-w-[860px]">
+          <div className="mt-12">
             <Faq items={t.home.faq.items} />
           </div>
         </div>

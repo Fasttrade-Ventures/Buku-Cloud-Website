@@ -7,7 +7,7 @@ export const LOGIN_URL = `${APP_URL}/login`;
 
 // Real WhatsApp / email contact endpoints used by buttons across the site.
 // Centralized so every CTA is wired to a real, working destination.
-export const WHATSAPP_NUMBER = "60123456789";
+export const WHATSAPP_NUMBER = "60126804697";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const SUPPORT_WHATSAPP_URL = `${WHATSAPP_URL}?text=${encodeURIComponent(
   "Hi BukuCloud, I have a question about the product."

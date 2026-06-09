@@ -188,7 +188,7 @@ export function EInvoiceContent() {
             eyebrow={t.einvoice.faq.eyebrow}
             title={t.einvoice.faq.title}
           />
-          <div className="mt-12 max-w-[860px]">
+          <div className="mt-12">
             <Faq items={t.einvoice.faq.items} />
           </div>
         </div>
