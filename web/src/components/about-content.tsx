@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button, Eyebrow, Section } from "@/components/ui";
+import { Counter } from "@/components/counter";
 import { REGISTER_URL } from "@/lib/site";
 import { useT } from "./i18n-provider";
 
@@ -43,10 +44,10 @@ export function AboutContent() {
 
       <Section bg="ink" bordered>
         <div className="container-max grid grid-cols-2 gap-x-8 gap-y-12 py-16 md:grid-cols-4 md:py-20">
-          {t.about.stats.map((s) => (
+          {t.about.stats.map((s, i) => (
             <div key={s.label} className="flex flex-col gap-3">
               <div className="font-display text-[clamp(36px,5vw,64px)] font-medium leading-[0.95] tracking-[-0.025em] text-white">
-                {s.value}
+                <Counter value={s.value} delay={i * 80} />
               </div>
               <div className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60">
                 {s.label}

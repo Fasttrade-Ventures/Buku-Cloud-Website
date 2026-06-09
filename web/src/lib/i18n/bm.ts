@@ -46,6 +46,7 @@ export const bm: Dictionary = {
     new: "Baharu",
     comingSoon: "Akan datang",
     seeAll: "Lihat semua",
+    backToTop: "Kembali ke atas",
   },
   home: {
     hero: {
@@ -71,6 +72,7 @@ export const bm: Dictionary = {
       },
       audienceSme: "Saya menjalankan PKS",
       audienceFirm: "Saya menjalankan firma akaun",
+      scrollHint: "Skrol untuk meneroka",
     },
     trust: {
       eyebrow: "Dipercayai oleh 1,200+ PKS Malaysia",

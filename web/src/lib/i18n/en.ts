@@ -44,6 +44,7 @@ export const en = {
     new: "New",
     comingSoon: "Coming soon",
     seeAll: "See all",
+    backToTop: "Back to top",
   },
   home: {
     hero: {
@@ -69,6 +70,7 @@ export const en = {
       },
       audienceSme: "I run an SME",
       audienceFirm: "I run an accounting firm",
+      scrollHint: "Scroll to explore",
     },
     trust: {
       eyebrow: "Trusted by 1,200+ Malaysian SMEs",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Badge, Eyebrow } from "./ui";
 import { DashboardMockup } from "./dashboard-mockup";
@@ -9,6 +9,49 @@ import { REGISTER_PRACTICE_URL, REGISTER_URL } from "@/lib/site";
 import { useT } from "./i18n-provider";
 
 type Audience = "sme" | "firm";
+
+/**
+ * Bottom-of-hero "scroll to keep reading" hint. Fades out the moment the
+ * visitor has scrolled past ~80px so it doesn't linger after the user has
+ * already engaged.
+ */
+function ScrollHint({ label }: { label: string }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const showId = window.setTimeout(() => setVisible(true), reduce ? 200 : 700);
+
+    const onScroll = () => {
+      if (window.scrollY > 80) setVisible(false);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.clearTimeout(showId);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      className="scroll-hint hidden md:inline-flex"
+      data-visible={visible ? "true" : "false"}
+      aria-hidden="true"
+    >
+      {label}
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path
+          d="M6 1.5v8M2.5 6 6 9.5 9.5 6"
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
 
 export function HomeHero() {
   const t = useT();
@@ -96,6 +139,8 @@ export function HomeHero() {
             </Badge>
           ))}
         </div>
+
+        <ScrollHint label={t.home.hero.scrollHint} />
       </div>
 
       <div className="lg:min-w-0">

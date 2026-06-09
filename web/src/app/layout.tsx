@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { I18nProvider } from "@/components/i18n-provider";
+import { BackToTop } from "@/components/back-to-top";
 import {
   KEYWORDS_GLOBAL,
   SITE_DESCRIPTION,
@@ -129,6 +130,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr"
+      data-scroll-behavior="smooth"
       className={`${fontBody.variable} ${fontDisplay.variable} ${fontMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col overflow-x-clip bg-bg-cream text-ink antialiased">
@@ -144,6 +146,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <BackToTop />
         </I18nProvider>
         <OrganizationJsonLd />
         <WebsiteJsonLd />

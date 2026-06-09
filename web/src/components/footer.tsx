@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FOOTER_LINKS, type FooterColumnKey } from "@/lib/site";
 import { LanguageToggle } from "./language-toggle";
-import { Logo } from "./logo";
+import { LogoLight } from "./logo";
 import { useI18n } from "./i18n-provider";
 
 const COLUMN_TITLE_KEY: Record<FooterColumnKey, "sectionProduct" | "sectionCompany" | "sectionHelp" | "sectionLegal"> = {
@@ -21,9 +21,7 @@ export function Footer() {
     <footer className="bg-ink text-white/80">
       <div className="container-max grid gap-12 py-16 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div className="flex flex-col gap-5">
-          <span className="inline-flex rounded-lg bg-white/95 px-3 py-2 w-fit">
-            <Logo height={28} />
-          </span>
+          <LogoLight height={30} />
           <p className="max-w-[28ch] text-[14px] leading-[1.6] text-white/70">
             {t.footer.tagline}
           </p>
