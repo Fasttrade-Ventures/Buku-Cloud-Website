@@ -1,118 +1,100 @@
-# BukuCloud Landing Site — Designs
+# BukuCloud — Marketing Site
 
-Pencil design files for the **bukucloud.com** marketing site.
+The public marketing site for **bukucloud.com** — a cloud accounting product for Malaysian SMEs and accounting firms. Built with **Next.js 16** (App Router, React 19) and **Tailwind CSS 4**.
 
-The actual SaaS app (Laravel + React) lives in the sibling folder `../accounting-saas/` and runs at `app.bukucloud.com`. This folder is **designs only** — no application code.
+The actual SaaS app (Laravel + React) lives in the sibling repo and runs at `app.bukucloud.com`. This repo is the marketing site only.
 
-## Folder layout
+## Repository layout
+
+This is a "monorepo-style" repo where the deployable Next.js app lives in a `web/` subfolder, alongside design and documentation assets that should travel with the project but are not part of the deployed bundle.
 
 ```
 bukucloud-landing/
+├── web/                    # The Next.js app — this is what Vercel deploys
+│   ├── src/                # App Router pages, components, i18n, lib
+│   ├── public/             # Static assets (logo, icon, OG image)
+│   ├── vercel.json         # Vercel headers + region config
+│   ├── .env.example        # Required env vars (copy to .env.local for dev)
+│   └── package.json
 ├── designs/
-│   └── bukucloud.pen        # Pencil file — design system + 13 page layouts
-├── docs/
-│   └── 2026-06-01-bukucloud-landing-design.md   # design spec (source of truth)
-├── assets/
-│   └── exports/             # PNG exports of key screens (for review / sharing)
-└── README.md
+│   └── bukucloud.pen       # Pencil design file — design system + page layouts
+├── docs/                   # Design spec + project notes
+├── assets/                 # PNG exports of key screens
+└── README.md               # You are here
 ```
 
-## How to open the designs
+## Pages
 
-The `.pen` files are encrypted Pencil-editor files. Open them with the **Pencil** extension in Cursor:
+Home · Features · Pricing · E-Invoice (MyInvois) · Accountants · About · Contact · Help (with topic + article detail pages) · Legal (Privacy / Terms / DPA / Cookies / Hub).
 
-1. Install the Pencil app and the Pencil MCP server (see `~/.cursor/mcp.json`)
-2. Open `designs/bukucloud.pen` in the Pencil editor
-3. The file contains the design system at the top of the canvas, with all 13 page layouts arranged below
+Includes:
 
-## What's in `bukucloud.pen`
+- **i18n EN/BM** via React Context + `localStorage` persistence
+- Full **SEO metadata**, `sitemap.xml`, `robots.txt`, `manifest.webmanifest`, OG image
+- **JSON-LD**: Organization, WebSite, SoftwareApplication, FAQPage, BreadcrumbList
+- **PDPA-aligned** legal pages
 
-### Design system (top of canvas, all `reusable: true`)
+## Local development
 
-14 reusable components, exactly per §3.7 of the spec:
+```bash
+cd web
+npm install
+cp .env.example .env.local   # then edit values as needed
+npm run dev
+```
 
-1. **Button / Primary** — terracotta fill, white text, 12px radius, no shadow
-2. **Button / Secondary** — transparent, 1.5px ink border, ink text
-3. **Button / Ghost** — text only with arrow → for tertiary CTAs
-4. **Nav Bar** — logo · 5 nav links · EN/BM toggle pill (EN active) · Log in · Start free →
-5. **Eyebrow Label** — small caps, +tracking, ink-muted, with 24px line
-6. **Section Heading** — Fraunces eyebrow + display heading
-7. **Card / Feature** — cream bg, 1px border, icon top-left, heading, body, link
-8. **Card / Pricing** — white surface, Popular badge, mono price, feature list
-9. **Card / Testimonial** — cream, Fraunces italic quote, attribution + stat
-10. **Stat Block** — large mono number + small sans label
-11. **FAQ Row** — border-bottom, plus toggle, smooth expand
-12. **Footer** — 4 columns + brand col + lang toggle + PDPA notice
-13. **Inline Badge** — small pill with dot, used for "MyInvois Ready" etc.
-14. **Section Divider** — batik-inspired wave motif (path geometry, single weight)
+Open <http://localhost:3000>.
 
-### Variables (color tokens, fonts, spacing)
+## Build
 
-All design tokens from §3.2–§3.4 are defined as Pencil variables — referenced as `$bg-cream`, `$accent`, `$font-display`, `$space-8`, etc. Single source of truth: change one value, the whole document updates.
+```bash
+cd web
+npm run build
+npm start                    # serve the production build locally
+```
 
-### Page layouts (13 frames at the document root)
+## Deploying to Vercel
 
-| # | Page | Frame name | Width |
+This repo uses Vercel's **monorepo Root Directory** pattern. The Next.js app lives in `web/`, so Vercel needs to be told that the deployable unit is `web/`, not the repo root.
+
+### One-time project setup
+
+1. Go to <https://vercel.com/new> and import `Fasttrade-Ventures/Buku-Cloud-Website`.
+2. **Set "Root Directory" to `web`** in the import dialog (this is the critical step — without it Vercel will look for `package.json` at the repo root and fail).
+3. Framework Preset will auto-detect as **Next.js**. Leave Build Command, Output Directory and Install Command on their defaults — `web/vercel.json` provides headers and pins the region to Singapore (`sin1`).
+4. Add the environment variables below (Settings → Environment Variables).
+5. Click **Deploy**. Subsequent pushes to `main` will auto-deploy production; pushes to other branches get preview deployments.
+
+### Environment variables
+
+All vars are public (`NEXT_PUBLIC_*`) and used at build time for SEO + CTA URLs. Set each in Vercel for the **Production**, **Preview**, and **Development** environments as appropriate. The full list lives in [`web/.env.example`](web/.env.example).
+
+| Variable | Required | Example | Notes |
 |---|---|---|---|
-| 1 | Home | `Page / Home` | 1440 |
-| 2 | Features | `Page / Features` | 1440 |
-| 3 | Pricing | `Page / Pricing` | 1440 |
-| 4 | E-Invoice (MyInvois) | `Page / E-Invoice` | 1440 |
-| 5 | For Accountants | `Page / For Accountants` | 1440 |
-| 6 | Customer Stories | `Page / Stories` | 1440 |
-| 7 | Security & Data | `Page / Security` | 1440 |
-| 8 | About | `Page / About` | 1440 |
-| 9 | Resources / Blog | `Page / Resources` | 1440 |
-| 10 | Contact / Demo | `Page / Contact` | 1440 |
-| 11 | Help Center | `Page / Help Center` | 1440 |
-| 12 | Legal Template (Privacy as exemplar) | `Page / Legal Template (Privacy)` | 1440 |
-| 13 | Home (Mobile variant) | `Page / Home (Mobile)` | 390 |
+| `NEXT_PUBLIC_APP_URL` | Yes | `https://app.bukucloud.com` | Base URL of the BukuCloud SaaS app. Used to build the `/register` and `/register/practice` CTAs. Use `https://staging-app.bukucloud.com` for Preview, `http://127.0.0.1:8000` for local dev. |
+| `NEXT_PUBLIC_SITE_URL` | Yes | `https://bukucloud.com` | Canonical base URL of this marketing site. Used for `sitemap.xml`, `robots.txt`, Open Graph image URLs and canonical `<link>` tags. Use the Vercel preview URL for Preview. |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Optional | `abc123…` | Google Search Console verification token. Leave empty until the property is claimed. |
+| `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Optional | `abc123…` | Bing Webmaster Tools verification token. Leave empty until the property is claimed. |
 
-Every page uses the reusable Nav Bar and Footer components. Edits to those components propagate to every page.
+### Custom domain
 
-## Design direction (short summary)
+1. In Vercel → Project → Settings → **Domains**, add `bukucloud.com` and `www.bukucloud.com`.
+2. Vercel will show the DNS records to add at your domain registrar:
+   - **Apex** `bukucloud.com` → `A` record to `76.76.21.21` (or follow Vercel's current instructions).
+   - **www** `www.bukucloud.com` → `CNAME` to `cname.vercel-dns.com`.
+3. Pick one as the canonical (usually the apex) and set the other to redirect. Vercel issues and renews TLS certificates automatically.
+4. After DNS propagates, update `NEXT_PUBLIC_SITE_URL` to `https://bukucloud.com` in Production env vars and redeploy.
 
-**Warm Malaysian + editorial typography.** Cream `#FAF7F2` background, terracotta `#C0492E` + forest `#0F4C3A` + mustard `#D4A537` accents, Fraunces serif headlines, JetBrains Mono for prices ("RM 79" reads like a ledger entry).
+### Why `web/` is the Root Directory (not a root `vercel.json`)
 
-Distinctive choices vs generic AI SaaS templates (per §7 of spec):
+Vercel officially supports per-project root directories for monorepos and this approach is more reliable than wrapping the build in a `cd web && …` command at the repo root. It also lets `web/vercel.json` (regional pin + security headers) be picked up correctly, and preserves Vercel's smart Next.js detection (ISR, image optimization, edge runtime, build caching).
 
-- Asymmetric hero with hard shadow (no soft drop-shadow)
-- Flat warm cream background, no gradients
-- Single-weight line drawings, no isometric SaaS illustrations
-- Editorial 2x2 grid with eyebrow + serif heading
-- EN/BM language toggle in the nav (currently English-only — BM translation handled in a later pass)
+If you ever switch to the wrapper approach instead, create `vercel.json` at the repo root with a `buildCommand` like `cd web && npm install && npm run build` and clear the Root Directory setting in the Vercel project.
 
-See `docs/2026-06-01-bukucloud-landing-design.md` for the full spec, rationale, and section-by-section breakdown.
+## Designs
 
-## Status
+The Pencil design file lives at `designs/bukucloud.pen` and is the source of truth for the design system (color tokens, fonts, spacing, 14 reusable components) and 13 page layouts. Open it with the Pencil extension in Cursor — see `docs/` for the spec.
 
-- [x] Design spec written
-- [x] Spec reviewed and approved by Asyraf
-- [x] Variables / design tokens defined
-- [x] 14 reusable components built
-- [x] All 12 desktop page layouts created
-- [x] Mobile variant of Home created
-- [x] Brand assets integrated (favicon + "buku" + "cloud" wordmark)
-- [x] All copy converted to English (BM translation deferred to a later phase)
-- [ ] PNG exports to `assets/exports/` (pending — re-run after Pencil file is saved to disk)
-- [ ] Pencil designs reviewed by Asyraf
-- [ ] BM translation pass
+## License
 
-## Re-running exports
-
-If the `assets/exports/` folder is empty, exports can be re-run from inside the Pencil app, or via MCP one page at a time:
-
-```
-export_nodes(filePath: "designs/bukucloud.pen", nodeIds: ["<frame-id>"], outputDir: "<absolute path>", format: "png", scale: 1.5)
-```
-
-Frame IDs for the 13 pages can be found via `batch_get` (search for nodes with name pattern `^Page /`).
-
-## Next phase (out of scope here)
-
-Once designs are approved:
-
-1. Real customer photography + quotes (replace placeholder grey blocks)
-2. Real product screenshots from `../accounting-saas/` (replace stylized mockups)
-3. Native-speaker BM translation pass (designs are now English-only; BM strings to be added per §5.2 of the spec)
-4. Implementation in code (framework TBD — Next.js most likely)
+Proprietary — © Fasttrade Ventures. All rights reserved.
