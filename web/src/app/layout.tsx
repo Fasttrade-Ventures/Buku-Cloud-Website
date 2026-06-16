@@ -17,6 +17,7 @@ import {
   OrganizationJsonLd,
   WebsiteJsonLd,
 } from "@/components/seo/jsonld";
+import { Analytics } from "@vercel/analytics/next";
 
 const fontBody = Inter({
   variable: "--font-body",
@@ -150,6 +151,7 @@ export default function RootLayout({
         </I18nProvider>
         <OrganizationJsonLd />
         <WebsiteJsonLd />
+        <Analytics />
       </body>
     </html>
   );
