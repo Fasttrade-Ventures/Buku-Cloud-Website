@@ -19,8 +19,8 @@ export const businessPlans: PricingPlan[] = [
   {
     tier: "Solo",
     price: { mode: "amount", amount: "49" },
-    sub: "1 user included",
-    ctaLabel: "Choose plan",
+    sub: "1 user included · 14-day free trial",
+    ctaLabel: "Try Solo free",
     ctaHref: REGISTER_URL,
     features: [
       "Everything in Startup",
@@ -43,6 +43,7 @@ export const businessPlans: PricingPlan[] = [
     features: [
       "Everything in Solo",
       "Up to 3 team members included",
+      "Accountant collaboration workspace",
       "Customer statements",
       "Products & services catalogue",
       "Balance sheet & cash flow reports",
@@ -61,6 +62,7 @@ export const businessPlans: PricingPlan[] = [
       "Everything in Growth",
       "Up to 5 team members included",
       "Audit log & compliance pack",
+      "API access & integrations",
       "Payroll module",
       "LHDN MyInvois e-Invoicing — coming soon",
       "Dedicated account manager",

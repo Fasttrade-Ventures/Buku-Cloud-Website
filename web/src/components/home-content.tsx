@@ -131,6 +131,46 @@ export function HomeContent() {
 
       <Section>
         <div className="container-max py-24">
+          <div className="grid gap-10 rounded-[20px] border border-border bg-bg-cream p-8 md:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+            <div className="flex flex-col gap-5">
+              <Eyebrow>{t.home.switchOffer.eyebrow}</Eyebrow>
+              <h2 className="font-display text-[clamp(32px,4.4vw,52px)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+                {t.home.switchOffer.title}
+              </h2>
+              <p className="text-[16px] leading-[1.6] text-ink-muted">
+                {t.home.switchOffer.body}
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Button href="/contact" size="md">
+                  {t.home.switchOffer.primary} <span aria-hidden>→</span>
+                </Button>
+                <Button href="/pricing" variant="secondary" size="md">
+                  {t.home.switchOffer.secondary}
+                </Button>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              {t.home.switchOffer.cards.map((card) => (
+                <article
+                  key={card.title}
+                  className="rounded-[16px] border border-border bg-surface p-5"
+                >
+                  <h3 className="font-display text-[22px] font-medium leading-tight text-ink">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-[1.6] text-ink-muted">
+                    {card.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="container-max py-24">
           <SectionHeading
             eyebrow={t.home.testimonials.eyebrow}
             title={t.home.testimonials.title}

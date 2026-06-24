@@ -52,14 +52,14 @@ export const bm: Dictionary = {
     hero: {
       sme: {
         eyebrow: "BukuCloud — untuk PKS Malaysia",
-        h1: "Buku akaun anda. Tanpa sakit kepala spreadsheet.",
-        body: "Invois, SST, bil, gaji dan laporan — dibina khas untuk PKS Malaysia. Batal bila-bila masa, percuma untuk usahawan solo.",
+        h1: "Perakaunan untuk PKS yang bekerja dengan akauntan.",
+        body: "Invois, bil, SST, laporan dan kerjasama akauntan — dibina untuk PKS Malaysia yang mahu buku akaun kemas tanpa menggaji pasukan kewangan penuh.",
         primary: "Mula percuma",
-        secondary: "Tonton demo",
+        secondary: "Tempah walkthrough",
         badges: [
-          "Percuma untuk usahawan solo",
+          "Pelan Startup percuma",
           "Berdaftar PDPA",
-          "Percubaan penuh 14 hari",
+          "Percubaan Solo 14 hari",
         ],
       },
       firm: {
@@ -120,10 +120,31 @@ export const bm: Dictionary = {
       ],
       learnMore: "Ketahui lagi",
     },
+    switchOffer: {
+      eyebrow: "Bertukar ke BukuCloud",
+      title: "Perisian lebih murah boleh senaraikan ciri. BukuCloud bantu anda berpindah, kemaskan data, dan kekal patuh.",
+      body: "Jika anda sedang membandingkan aplikasi perakaunan, SQL Account, atau spreadsheet, jangan mula dari kosong. Kami bantu bawa masuk pelanggan, produk, baki pembukaan dan invois, kemudian sambungkan akauntan supaya buku kekal kemas selepas mula.",
+      primary: "Rancang migrasi saya",
+      secondary: "Bandingkan pelan",
+      cards: [
+        {
+          title: "Bantuan migrasi",
+          body: "Import pelanggan, produk, pembekal dan baki pembukaan dengan checklist berpandu, bukan bina semula semuanya secara manual.",
+        },
+        {
+          title: "Sedia untuk akauntan",
+          body: "Jemput akauntan anda atau pautkan melalui konsol Practice supaya semakan, kerja hujung tahun dan pematuhan berlaku di satu tempat.",
+        },
+        {
+          title: "Pematuhan Malaysia",
+          body: "SST, persediaan MyInvois, log audit dan sokongan tempatan dilayan sebagai aliran kerja, bukan sekadar bullet ciri.",
+        },
+      ],
+    },
     pricing: {
       eyebrow: "Harga",
       titleLine1: "Mula percuma.",
-      titleLine2: "Naik taraf bila anda sedia.",
+      titleLine2: "Cuba Solo selama 14 hari.",
       seeFull: "Lihat semua pelan",
     },
     accountantsBlock: {
@@ -259,8 +280,8 @@ export const bm: Dictionary = {
   pricing: {
     hero: {
       eyebrow: "Harga",
-      h1: "Harga jelas. Tiada kejutan.",
-      body: "Tiada bayaran setup. Tiada kontrak panjang. Batal bila-bila masa. Percuma untuk bulan pertama dan klien pertama anda.",
+      h1: "Bayar untuk buku akaun lebih kemas, bukan sekadar perisian lebih murah.",
+      body: "Mula dengan pelan Startup percuma, atau cuba Solo selama 14 hari tanpa kad. Data anda kekal di tempatnya jika percubaan tamat atau anda turun taraf.",
     },
     audienceBusiness: "Untuk perniagaan",
     audienceAccountant: "Untuk akauntan",
@@ -301,6 +322,10 @@ export const bm: Dictionary = {
         {
           q: "Adakah anda menyokong SST dan e-Invois LHDN?",
           a: "Ya — SST 6% dikira automatik pada setiap invois. Serahan MyInvois disertakan pada pelan Solo, Growth, Corporate dan Enterprise.",
+        },
+        {
+          q: "Mengapa pilih BukuCloud jika aplikasi perakaunan lain lebih murah?",
+          a: "Pilih BukuCloud bila anda mahu lebih daripada senarai ciri: migrasi berpandu, kerjasama akauntan, aliran kerja pematuhan Malaysia, sokongan tempatan, integrasi API dan laluan self-hosted untuk pasukan lebih besar.",
         },
       ],
     },
@@ -621,6 +646,7 @@ export const bm: Dictionary = {
       needOptions: [
         "Saya menjalankan PKS Malaysia",
         "Saya menjalankan firma akaun",
+        "Saya mahu bertukar dari aplikasi perakaunan lain",
         "Saya berhijrah dari SQL Account",
         "Saya ada keperluan tersuai / enterprise",
       ],

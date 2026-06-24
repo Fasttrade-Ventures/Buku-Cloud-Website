@@ -50,14 +50,14 @@ export const en = {
     hero: {
       sme: {
         eyebrow: "BukuCloud — for Malaysian SMEs",
-        h1: "Your books. Without the spreadsheet pain.",
-        body: "Invoicing, SST, bills, payroll and reports — built from scratch for Malaysian SMEs. Cancel anytime, free for solo founders.",
+        h1: "Accounting for SMEs who work with accountants.",
+        body: "Invoicing, bills, SST, reports and accountant collaboration — built for Malaysian SMEs that want clean books without hiring a full finance team.",
         primary: "Start free",
-        secondary: "Watch demo",
+        secondary: "Book a walkthrough",
         badges: [
-          "Free for solo founders",
+          "Free Startup plan",
           "PDPA registered",
-          "14-day full trial",
+          "14-day Solo trial",
         ],
       },
       firm: {
@@ -118,10 +118,31 @@ export const en = {
       ],
       learnMore: "Learn more",
     },
+    switchOffer: {
+      eyebrow: "Switch to BukuCloud",
+      title: "Cheaper software can list features. BukuCloud helps you move, clean up, and stay compliant.",
+      body: "If you are comparing accounting apps, SQL Account, or spreadsheets, do not start from zero. We help you bring over customers, products, opening balances and invoices, then connect your accountant so the books stay tidy after launch.",
+      primary: "Plan my migration",
+      secondary: "Compare plans",
+      cards: [
+        {
+          title: "Migration help",
+          body: "Import customers, products, suppliers and opening balances with a guided checklist instead of rebuilding everything by hand.",
+        },
+        {
+          title: "Accountant-ready",
+          body: "Invite your accountant or link them through Practice console so review, year-end work and compliance happen in one place.",
+        },
+        {
+          title: "Malaysia compliance",
+          body: "SST, MyInvois preparation, audit logs and local support are treated as workflow, not just feature bullets.",
+        },
+      ],
+    },
     pricing: {
       eyebrow: "Pricing",
       titleLine1: "Start free.",
-      titleLine2: "Upgrade when you're ready.",
+      titleLine2: "Try Solo for 14 days.",
       seeFull: "See full plans",
     },
     accountantsBlock: {
@@ -257,8 +278,8 @@ export const en = {
   pricing: {
     hero: {
       eyebrow: "Pricing",
-      h1: "Clear pricing. No surprises.",
-      body: "No setup fees. No long contracts. Cancel anytime. Free for your first month and your first client.",
+      h1: "Pay for cleaner books, not just cheaper software.",
+      body: "Start on a free Startup plan, or try Solo for 14 days with no card required. Your data stays in place if the trial ends or you downgrade.",
     },
     audienceBusiness: "For businesses",
     audienceAccountant: "For accountants",
@@ -299,6 +320,10 @@ export const en = {
         {
           q: "Do you support SST and LHDN e-Invoice?",
           a: "Yes — SST 6% is auto-calculated on every invoice. MyInvois submission is included on Solo, Growth, Corporate and Enterprise plans.",
+        },
+        {
+          q: "Why choose BukuCloud if another accounting app is cheaper?",
+          a: "Choose BukuCloud when you want more than feature checklists: guided migration, accountant collaboration, Malaysian compliance workflows, local support, API integrations and a self-hosted path for larger teams.",
         },
       ],
     },
@@ -619,6 +644,7 @@ export const en = {
       needOptions: [
         "I run a Malaysian SME",
         "I run an accounting firm",
+        "I'm switching from another accounting app",
         "I'm migrating from SQL Account",
         "I have a custom / enterprise need",
       ],
