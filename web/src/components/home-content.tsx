@@ -4,9 +4,8 @@ import Link from "next/link";
 import { Button, CheckIcon, Eyebrow, Section, SectionHeading } from "@/components/ui";
 import { HomeHero } from "@/components/home-hero";
 import { PracticeConsoleMockup } from "@/components/practice-console-mockup";
-import { PricingCard } from "@/components/pricing-card";
+import { PricingGrid } from "@/components/pricing-grid";
 import { Faq } from "@/components/faq";
-import { businessPlans } from "@/lib/plans";
 import { REGISTER_URL } from "@/lib/site";
 import { useI18n } from "./i18n-provider";
 
@@ -44,7 +43,6 @@ const TESTIMONIAL_QUOTES = {
 export function HomeContent() {
   const { t, locale } = useI18n();
   const isBm = locale === "bm";
-  const teaserPlans = [businessPlans[0], businessPlans[2], businessPlans[3]];
   const quotes = isBm ? TESTIMONIAL_QUOTES.bm : TESTIMONIAL_QUOTES.en;
 
   return (
@@ -262,11 +260,7 @@ export function HomeContent() {
               {t.home.pricing.seeFull} <span aria-hidden>→</span>
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {teaserPlans.map((p) => (
-              <PricingCard key={p.tier} plan={p} />
-            ))}
-          </div>
+          <PricingGrid />
         </div>
       </Section>
 
