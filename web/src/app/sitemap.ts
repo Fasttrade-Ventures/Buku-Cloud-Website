@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { ARTICLES, TOPICS } from "@/lib/help-content";
+import { GUIDES } from "@/lib/guides";
 
 type Entry = {
   path: string;
@@ -14,6 +15,7 @@ const STATIC_ROUTES: Entry[] = [
   { path: "/pricing", changeFrequency: "weekly", priority: 0.95 },
   { path: "/e-invoice", changeFrequency: "monthly", priority: 0.9 },
   { path: "/accountants", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/guides", changeFrequency: "weekly", priority: 0.85 },
   { path: "/about", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
   { path: "/help", changeFrequency: "weekly", priority: 0.7 },
@@ -36,12 +38,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.5,
   }));
-  return [...STATIC_ROUTES, ...helpTopicRoutes, ...helpArticleRoutes].map(
-    ({ path, changeFrequency, priority }) => ({
-      url: `${SITE_URL}${path}`,
-      lastModified,
-      changeFrequency,
-      priority,
-    }),
-  );
+  const guideRoutes: Entry[] = GUIDES.map((g) => ({
+    path: `/guides/${g.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+  return [
+    ...STATIC_ROUTES,
+    ...guideRoutes,
+    ...helpTopicRoutes,
+    ...helpArticleRoutes,
+  ].map(({ path, changeFrequency, priority }) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }));
 }

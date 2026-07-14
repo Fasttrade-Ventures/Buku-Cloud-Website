@@ -43,6 +43,7 @@ export const FOOTER_LINKS: Record<
       labelEn: "For Accountants",
       labelBm: "Untuk Akauntan",
     },
+    { href: "/guides", labelEn: "Guides", labelBm: "Panduan" },
   ],
   Company: [
     { href: "/about", labelEn: "About", labelBm: "Tentang" },

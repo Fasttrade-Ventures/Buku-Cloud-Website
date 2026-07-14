@@ -4,8 +4,8 @@ import {
   SITE_LEGAL_NAME,
   SITE_NAME,
   SITE_URL,
-  SOCIAL,
   absoluteUrl,
+  socialSameAs,
 } from "@/lib/seo";
 
 type JsonLdProps = {
@@ -79,7 +79,7 @@ export function OrganizationJsonLd() {
             availableLanguage: ["English", "Malay"],
           },
         ],
-        sameAs: [SOCIAL.facebook, SOCIAL.linkedin, SOCIAL.instagram],
+        sameAs: socialSameAs(),
       }}
     />
   );
@@ -96,7 +96,8 @@ export function WebsiteJsonLd() {
         url: SITE_URL,
         name: SITE_NAME,
         publisher: { "@id": `${SITE_URL}/#organization` },
-        inLanguage: ["en-MY", "ms-MY"],
+        // SSR content is English (en-MY). BM UI toggle is not a separate URL.
+        inLanguage: "en-MY",
         potentialAction: {
           "@type": "SearchAction",
           target: {
@@ -146,11 +147,44 @@ export function SoftwareApplicationJsonLd({
           description: o.description,
           availability: "https://schema.org/InStock",
         })),
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          reviewCount: "184",
+        // No AggregateRating until verified on-page reviews exist.
+      }}
+    />
+  );
+}
+
+export function ArticleJsonLd({
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+}: {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  return (
+    <JsonLd
+      id="article-jsonld"
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline,
+        description,
+        url: absoluteUrl(path),
+        mainEntityOfPage: absoluteUrl(path),
+        datePublished,
+        dateModified: dateModified ?? datePublished,
+        inLanguage: "en-MY",
+        author: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
         },
+        publisher: { "@id": `${SITE_URL}/#organization` },
       }}
     />
   );

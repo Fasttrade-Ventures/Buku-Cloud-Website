@@ -48,6 +48,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const rootTwitter: Metadata["twitter"] = {
+  card: "summary_large_image",
+  title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+  description: SITE_DESCRIPTION,
+  images: ["/opengraph-image"],
+};
+if (SOCIAL.twitter) {
+  rootTwitter.site = SOCIAL.twitter;
+  rootTwitter.creator = SOCIAL.twitter;
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -65,7 +76,7 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
     languages: {
       "en-MY": SITE_URL,
-      "ms-MY": SITE_URL,
+      "x-default": SITE_URL,
     },
   },
   formatDetection: {
@@ -81,7 +92,6 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     locale: "en_MY",
-    alternateLocale: ["ms_MY"],
     images: [
       {
         url: "/opengraph-image",
@@ -91,14 +101,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    site: SOCIAL.twitter,
-    creator: SOCIAL.twitter,
-    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
-    description: SITE_DESCRIPTION,
-    images: ["/opengraph-image"],
-  },
+  twitter: rootTwitter,
   robots: {
     index: true,
     follow: true,
@@ -129,7 +132,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="en-MY"
       dir="ltr"
       data-scroll-behavior="smooth"
       className={`${fontBody.variable} ${fontDisplay.variable} ${fontMono.variable} h-full`}
