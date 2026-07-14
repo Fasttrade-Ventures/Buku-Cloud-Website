@@ -18,6 +18,10 @@ import {
   WebsiteJsonLd,
 } from "@/components/seo/jsonld";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-FLEV5YQW68";
 
 const fontBody = Inter({
   variable: "--font-body",
@@ -155,6 +159,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <WebsiteJsonLd />
         <Analytics />
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
       </body>
     </html>
   );
