@@ -9,6 +9,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Cloud accounting built for Malaysia: SST, MyInvois e-Invoicing, invoicing, bills, payroll and reports. From RM 0/mo. Practice console for accountants included.",
   path: "/",
+  alternateMsPath: "/ms",
   keywords: [
     "best accounting software Malaysia",
     "Xero alternative Malaysia",

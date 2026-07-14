@@ -12,8 +12,9 @@ import { en } from "@/lib/i18n";
 export const metadata: Metadata = pageMetadata({
   title: "Contact BukuCloud — WhatsApp, email or book a demo",
   description:
-    "Talk to a real human at BukuCloud — WhatsApp, email, or book a 20-min walkthrough. Mon–Sat, 9am–6pm MYT. Office in Wisma KFC, Jln Sultan Ismail, Kuala Lumpur.",
+    "Talk to a real human at BukuCloud — WhatsApp, email, or book a 20-min walkthrough. Mon–Sat, 9am–6pm MYT. Fasttrade Ventures, Bandar Sri Sendayan, Negeri Sembilan.",
   path: "/contact",
+  alternateMsPath: "/ms/hubungi",
   keywords: [
     "BukuCloud contact",
     "BukuCloud WhatsApp",

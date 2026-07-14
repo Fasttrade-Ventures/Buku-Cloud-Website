@@ -24,6 +24,12 @@ const STATIC_ROUTES: Entry[] = [
   { path: "/terms", changeFrequency: "monthly", priority: 0.4 },
   { path: "/dpa", changeFrequency: "monthly", priority: 0.3 },
   { path: "/cookies", changeFrequency: "yearly", priority: 0.3 },
+  /** Crawlable Bahasa Malaysia twins (hreflang pairs). */
+  { path: "/ms", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/ms/harga", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/ms/e-invois", changeFrequency: "monthly", priority: 0.85 },
+  { path: "/ms/akauntan", changeFrequency: "weekly", priority: 0.85 },
+  { path: "/ms/hubungi", changeFrequency: "yearly", priority: 0.55 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

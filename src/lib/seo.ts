@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 
 /**
- * Preferred host MUST match Vercel production (apex 308 → www).
+ * Preferred host MUST match Vercel production.
  * Override with NEXT_PUBLIC_SITE_URL only if deploying elsewhere.
  */
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bukucloud.com"
 ).replace(/\/+$/, "");
 
+/** Product / brand name shown in UI and Google results. */
 export const SITE_NAME = "BukuCloud";
-export const SITE_LEGAL_NAME = "BukuCloud Sdn Bhd";
+/** Operating company (NAP legal name). */
+export const SITE_LEGAL_NAME = "Fasttrade Ventures";
 export const SITE_TAGLINE = "Cloud accounting for Malaysian SMEs";
 export const SITE_DESCRIPTION =
   "Cloud accounting built for Malaysia: SST, MyInvois e-Invoicing, invoicing, bills, payroll, and reports. Calm, multi-tenant, and made for the accountants who serve Malaysian SMEs.";
 
-/** Only include verified, resolvable profiles. Omit dead handles. */
+/** Verified, resolvable profiles only. */
 export const SOCIAL = {
   twitter: "" as string,
   facebook: "https://www.facebook.com/bukucloud",
@@ -22,15 +24,39 @@ export const SOCIAL = {
   instagram: "https://www.instagram.com/bukucloud",
 };
 
-/** Real WhatsApp support number (E.164), also shown on /contact. */
+/** Real WhatsApp support number (E.164). */
 export const ORG_PHONE = "+60126804697";
+export const ORG_PHONE_DISPLAY = "+60 12-680 4697";
+
+/** NAP — Sendayan, Negeri Sembilan. */
 export const ORG_ADDRESS = {
-  street: "Wisma KFC, Jln Sultan Ismail",
-  locality: "Kuala Lumpur",
-  region: "Wilayah Persekutuan Kuala Lumpur",
-  postalCode: "50250",
+  street: "Bandar Sri Sendayan",
+  locality: "Sendayan",
+  region: "Negeri Sembilan",
+  postalCode: "71950",
   country: "MY",
 };
+
+export const ORG_ADDRESS_DISPLAY =
+  "Bandar Sri Sendayan, 71950 Sendayan, Negeri Sembilan, Malaysia";
+
+export const ORG_GEO = {
+  /** Approximate coordinates for Bandar Sri Sendayan, NS */
+  latitude: 2.6235,
+  longitude: 101.8432,
+  /** ISO 3166-2:MY for Negeri Sembilan */
+  regionCode: "MY-05",
+  placename: "Sendayan",
+};
+
+export const SUPPORT_HOURS = "Mon–Sat, 9am–6pm MYT";
+export const TRUST_STATS = {
+  smeCount: "1,200+",
+  firmCount: "200+",
+  pdpa: "PDPA registered",
+  trial: "14-day Solo trial",
+  freePlan: "Free Startup plan",
+} as const;
 
 export const KEYWORDS_GLOBAL = [
   "cloud accounting Malaysia",
@@ -52,13 +78,13 @@ export type SeoInput = {
   ogImage?: string;
   noindex?: boolean;
   type?: "website" | "article" | "profile" | "book";
+  /** Crawlable Malay URL for en↔ms hreflang pairs. */
+  alternateMsPath?: string;
+  /** When this page is Malay, pass the English twin path. */
+  alternateEnPath?: string;
+  locale?: "en" | "ms";
 };
 
-/**
- * Build a Next.js Metadata object for a page with sane SEO defaults.
- * Combines site-wide tokens with per-page overrides for canonical URLs,
- * Open Graph, Twitter cards and robots directives.
- */
 export function pageMetadata({
   title,
   description,
@@ -67,6 +93,9 @@ export function pageMetadata({
   ogImage,
   noindex = false,
   type = "website",
+  alternateMsPath,
+  alternateEnPath,
+  locale = "en",
 }: SeoInput): Metadata {
   const url = absoluteUrl(path);
   const image = ogImage ?? "/opengraph-image";
@@ -81,18 +110,28 @@ export function pageMetadata({
     twitterCard.creator = SOCIAL.twitter;
   }
 
+  const enUrl = absoluteUrl(
+    locale === "ms" ? (alternateEnPath ?? "/") : path,
+  );
+  const msUrl = alternateMsPath
+    ? absoluteUrl(alternateMsPath)
+    : locale === "ms"
+      ? url
+      : undefined;
+
+  const languages: Record<string, string> = {
+    "en-MY": enUrl,
+    "x-default": enUrl,
+  };
+  if (msUrl) languages["ms-MY"] = msUrl;
+
   return {
     title,
     description,
     keywords: [...KEYWORDS_GLOBAL, ...keywords],
     alternates: {
       canonical: url,
-      // Only declare languages that have crawlable, distinct URLs.
-      // BM is a client UI toggle today — do not fake ms-MY hreflang.
-      languages: {
-        "en-MY": url,
-        "x-default": url,
-      },
+      languages,
     },
     openGraph: {
       type,
@@ -100,7 +139,9 @@ export function pageMetadata({
       title,
       description,
       siteName: SITE_NAME,
-      locale: "en_MY",
+      locale: locale === "ms" ? "ms_MY" : "en_MY",
+      ...(msUrl && locale === "en" ? { alternateLocale: ["ms_MY"] } : {}),
+      ...(locale === "ms" ? { alternateLocale: ["en_MY"] } : {}),
       images: [
         {
           url: image,

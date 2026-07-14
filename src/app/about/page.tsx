@@ -9,13 +9,13 @@ import {
 export const metadata: Metadata = pageMetadata({
   title: "About BukuCloud",
   description:
-    "Built in Kuala Lumpur for Malaysian SMEs. Founded in 2023 by accountants and engineers tired of asking SME owners to debug Excel — meet the team behind BukuCloud.",
+    "Built in Sendayan, Negeri Sembilan by Fasttrade Ventures for Malaysian SMEs. Founded in 2023 by accountants and engineers tired of asking SME owners to debug Excel.",
   path: "/about",
   keywords: [
     "BukuCloud team",
     "Malaysian accounting startup",
     "BukuCloud founders",
-    "Kuala Lumpur SaaS",
+    "Fasttrade Ventures Sendayan",
   ],
 });
 

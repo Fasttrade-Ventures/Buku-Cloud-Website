@@ -1,5 +1,6 @@
 import {
   ORG_ADDRESS,
+  ORG_GEO,
   ORG_PHONE,
   SITE_LEGAL_NAME,
   SITE_NAME,
@@ -52,7 +53,7 @@ export function OrganizationJsonLd() {
         foundingDate: "2023",
         foundingLocation: {
           "@type": "Place",
-          name: "Kuala Lumpur, Malaysia",
+          name: "Sendayan, Negeri Sembilan, Malaysia",
         },
         address: {
           "@type": "PostalAddress",
@@ -70,6 +71,19 @@ export function OrganizationJsonLd() {
             email: "support@bukucloud.com",
             areaServed: "MY",
             availableLanguage: ["English", "Malay"],
+            hoursAvailable: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+              ],
+              opens: "09:00",
+              closes: "18:00",
+            },
           },
           {
             "@type": "ContactPoint",
@@ -80,6 +94,14 @@ export function OrganizationJsonLd() {
           },
         ],
         sameAs: socialSameAs(),
+        brand: {
+          "@type": "Brand",
+          name: SITE_NAME,
+        },
+        parentOrganization: {
+          "@type": "Organization",
+          name: SITE_LEGAL_NAME,
+        },
       }}
     />
   );
@@ -243,6 +265,7 @@ export function LocalBusinessJsonLd() {
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}/#localbusiness`,
         name: SITE_LEGAL_NAME,
+        alternateName: SITE_NAME,
         url: SITE_URL,
         telephone: ORG_PHONE,
         email: "hello@bukucloud.com",
@@ -256,8 +279,8 @@ export function LocalBusinessJsonLd() {
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: 3.156,
-          longitude: 101.71,
+          latitude: ORG_GEO.latitude,
+          longitude: ORG_GEO.longitude,
         },
         areaServed: {
           "@type": "Country",
@@ -272,6 +295,7 @@ export function LocalBusinessJsonLd() {
               "Wednesday",
               "Thursday",
               "Friday",
+              "Saturday",
             ],
             opens: "09:00",
             closes: "18:00",

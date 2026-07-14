@@ -7,7 +7,7 @@ import { HELLO_EMAIL, SUPPORT_WHATSAPP_URL } from "@/lib/site";
 import { useT } from "./i18n-provider";
 
 const OFFICE_MAP_URL =
-  "https://maps.google.com/?q=Wisma+KFC+Jln+Sultan+Ismail+Kuala+Lumpur";
+  "https://maps.google.com/?q=Bandar+Sri+Sendayan+Negeri+Sembilan+Malaysia";
 const WHATSAPP_DISPLAY = "+60 12-680 4697";
 
 export function ContactContent() {

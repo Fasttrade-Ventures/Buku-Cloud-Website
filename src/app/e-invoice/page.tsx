@@ -9,6 +9,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "LHDN MyInvois e-Invoicing built into BukuCloud. Submit, validate and archive automatically. Phase 2 starts in 2026 — be ready early. Built-in for tenants whose company profile is Malaysia + has a TIN.",
   path: "/e-invoice",
+  alternateMsPath: "/ms/e-invois",
   keywords: [
     "MyInvois Malaysia",
     "LHDN e-Invoice",

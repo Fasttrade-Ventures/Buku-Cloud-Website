@@ -8,6 +8,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "One Practice console for every client book. Cross-client AR aging, bulk-action toolbar, one-click switch into any client, practice-wide audit log. Free Practice plan up to Practice Firm at RM 599/mo.",
   path: "/accountants",
+  alternateMsPath: "/ms/akauntan",
   keywords: [
     "Practice console Malaysia",
     "accounting firm software Malaysia",

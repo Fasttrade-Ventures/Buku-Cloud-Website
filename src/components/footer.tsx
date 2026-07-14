@@ -26,7 +26,7 @@ export function Footer() {
             {t.footer.tagline}
           </p>
           <p className="text-[12px] text-white/50">
-            BukuCloud Sdn Bhd, Kuala Lumpur · {t.footer.pdpa}
+            Fasttrade Ventures · Sendayan, NS · {t.footer.pdpa}
           </p>
         </div>
 
@@ -56,7 +56,8 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-max flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[12px] text-white/55">
-            © {new Date().getFullYear()} BukuCloud Sdn Bhd. {t.footer.rights}
+            © {new Date().getFullYear()} Fasttrade Ventures. BukuCloud.{" "}
+            {t.footer.rights}
           </p>
           <div className="flex items-center gap-3 text-[12px] text-white/55">
             <LanguageToggle className="border-white/15 bg-white/5 text-white/70" />

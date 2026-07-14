@@ -8,6 +8,7 @@ import { PricingGrid } from "@/components/pricing-grid";
 import { Faq } from "@/components/faq";
 import { REGISTER_URL } from "@/lib/site";
 import { useI18n } from "./i18n-provider";
+import { GuideHubLinks } from "@/components/related-links";
 
 const trustLogos = [
   "Fasttrade Ventures",
@@ -276,6 +277,8 @@ export function HomeContent() {
           </div>
         </div>
       </Section>
+
+      <GuideHubLinks />
 
       <Section className="bg-mustard/[.08]">
         <div className="container-max flex flex-col items-center gap-6 py-24 text-center">

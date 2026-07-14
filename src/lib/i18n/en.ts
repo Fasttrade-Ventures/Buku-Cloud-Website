@@ -14,14 +14,14 @@ export const en = {
   },
   footer: {
     tagline:
-      "Cloud accounting for Malaysian SMEs. Built in Kuala Lumpur, made for the way you actually run your business.",
+      "Cloud accounting for Malaysian SMEs. Built in Sendayan by Fasttrade Ventures, made for the way you actually run your business.",
     sectionProduct: "Product",
     sectionCompany: "Company",
     sectionHelp: "Help",
     sectionLegal: "Legal",
     rights: "All rights reserved.",
     pdpa: "PDPA registered",
-    madeIn: "Made in Kuala Lumpur",
+    madeIn: "Made in Sendayan, NS",
   },
   common: {
     startFree: "Start free",
@@ -545,7 +545,7 @@ export const en = {
   about: {
     hero: {
       eyebrow: "About BukuCloud",
-      h1Line1: "Built in Kuala Lumpur.",
+      h1Line1: "Built in Sendayan.",
       h1Line2: "For Malaysian SMEs.",
       body: "We're engineers, accountants and shopkeepers who got tired of watching SME owners debug spreadsheets at 11pm. So we built the cloud accounting tool we'd want our parents to use.",
       tryFree: "Try free",
@@ -554,7 +554,7 @@ export const en = {
     stats: [
       { value: "1,200+", label: "Malaysian SMEs onboard" },
       { value: "100%", label: "SST + MyInvois ready" },
-      { value: "2023", label: "Founded in Kuala Lumpur" },
+      { value: "2023", label: "Founded in Negeri Sembilan" },
       { value: "BM · EN", label: "Local support, always" },
     ],
     story: {
@@ -660,7 +660,7 @@ export const en = {
       demoTitle: "Book a 20-min walkthrough",
       demoSub: "We'll show you the parts that matter for your business",
       office: "Office",
-      officeAddress: "Wisma KFC, Jln Sultan Ismail, KL",
+      officeAddress: "Bandar Sri Sendayan, Negeri Sembilan",
       officeSub: "By appointment — call ahead",
     },
     faqEyebrow: "Contact FAQ",

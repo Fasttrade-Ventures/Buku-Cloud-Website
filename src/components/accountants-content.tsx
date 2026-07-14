@@ -6,6 +6,8 @@ import { PricingGrid } from "@/components/pricing-grid";
 import { PracticeConsoleMockup } from "@/components/practice-console-mockup";
 import { REGISTER_PRACTICE_URL } from "@/lib/site";
 import { useT } from "./i18n-provider";
+import { ProofStrip } from "@/components/proof-strip";
+import { GuideHubLinks } from "@/components/related-links";
 
 const TOOL_ICONS = [<DashboardIcon key="d" />, <SwitchIcon key="s" />, <BulkIcon key="b" />];
 
@@ -44,6 +46,8 @@ export function AccountantsContent() {
           <PracticeConsoleMockup />
         </div>
       </Section>
+
+      <ProofStrip title="Built for Malaysian practices" />
 
       <Section bg="alt">
         <div className="container-max py-24">
@@ -183,6 +187,8 @@ export function AccountantsContent() {
           </div>
         </div>
       </Section>
+
+      <GuideHubLinks />
 
       <Section className="bg-mustard/[.08]">
         <div className="container-max flex flex-col items-center gap-6 py-24 text-center">

@@ -11,6 +11,7 @@ import {
   SITE_NAME,
   SITE_TAGLINE,
   SITE_URL,
+  ORG_GEO,
   SOCIAL,
 } from "@/lib/seo";
 import {
@@ -124,10 +125,10 @@ export const metadata: Metadata = {
       : undefined,
   },
   other: {
-    "geo.region": "MY-14",
-    "geo.placename": "Kuala Lumpur",
-    "geo.position": "3.156;101.71",
-    ICBM: "3.156, 101.71",
+    "geo.region": ORG_GEO.regionCode,
+    "geo.placename": ORG_GEO.placename,
+    "geo.position": `${ORG_GEO.latitude};${ORG_GEO.longitude}`,
+    ICBM: `${ORG_GEO.latitude}, ${ORG_GEO.longitude}`,
   },
 };
 

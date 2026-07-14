@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button, CheckIcon, Eyebrow, Section, SectionHeading } from "@/components/ui";
 import { REGISTER_URL } from "@/lib/site";
 import { useI18n } from "./i18n-provider";
+import { GuideHubLinks } from "@/components/related-links";
+import { ProofStrip } from "@/components/proof-strip";
 
 const COMPARE_ROWS_KEYS = [
   ["Built for Malaysia", "Yes", "Generic", "Generic"],
@@ -46,6 +48,8 @@ export function FeaturesContent() {
           </p>
         </div>
       </Section>
+
+      <ProofStrip />
 
       {t.features.jobs.map((job, i) => (
         <Section key={job.title} bg={i % 2 === 1 ? "alt" : "cream"}>
@@ -152,6 +156,8 @@ export function FeaturesContent() {
           </div>
         </div>
       </Section>
+
+      <GuideHubLinks />
 
       <Section className="bg-mustard/[.08]">
         <div className="container-max flex flex-col items-center gap-6 py-24 text-center">

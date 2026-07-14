@@ -5,6 +5,8 @@ import { Badge, Button, CheckIcon, Eyebrow, Section, SectionHeading } from "@/co
 import { Faq } from "@/components/faq";
 import { REGISTER_URL } from "@/lib/site";
 import { useT } from "./i18n-provider";
+import { ProofStrip } from "@/components/proof-strip";
+import { GuideHubLinks } from "@/components/related-links";
 
 export function EInvoiceContent() {
   const t = useT();
@@ -69,6 +71,8 @@ export function EInvoiceContent() {
           </div>
         </div>
       </Section>
+
+      <ProofStrip title="MyInvois-ready ops, Malaysia-first proof" />
 
       <Section bg="alt">
         <div className="container-max py-24">
@@ -193,6 +197,8 @@ export function EInvoiceContent() {
           </div>
         </div>
       </Section>
+
+      <GuideHubLinks />
 
       <Section bg="accent">
         <div className="container-max flex flex-col items-center gap-6 py-24 text-center text-white">

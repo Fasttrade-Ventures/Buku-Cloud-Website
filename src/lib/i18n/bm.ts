@@ -16,14 +16,14 @@ export const bm: Dictionary = {
   },
   footer: {
     tagline:
-      "Perakaunan awan untuk PKS Malaysia. Dibina di Kuala Lumpur, dibuat untuk cara anda menjalankan perniagaan.",
+      "Perakaunan awan untuk PKS Malaysia. Dibina di Sendayan oleh Fasttrade Ventures, dibuat untuk cara anda menjalankan perniagaan.",
     sectionProduct: "Produk",
     sectionCompany: "Syarikat",
     sectionHelp: "Bantuan",
     sectionLegal: "Perundangan",
     rights: "Hak cipta terpelihara.",
     pdpa: "Berdaftar PDPA",
-    madeIn: "Dibina di Kuala Lumpur",
+    madeIn: "Dibina di Sendayan, NS",
   },
   common: {
     startFree: "Mula percuma",
@@ -547,7 +547,7 @@ export const bm: Dictionary = {
   about: {
     hero: {
       eyebrow: "Tentang BukuCloud",
-      h1Line1: "Dibina di Kuala Lumpur.",
+      h1Line1: "Dibina di Sendayan.",
       h1Line2: "Untuk PKS Malaysia.",
       body: "Kami jurutera, akauntan dan peniaga yang penat melihat pemilik PKS debug spreadsheet pukul 11 malam. Jadi kami bina alat perakaunan awan yang kami nak ibu bapa kami pakai.",
       tryFree: "Cuba percuma",
@@ -556,7 +556,7 @@ export const bm: Dictionary = {
     stats: [
       { value: "1,200+", label: "PKS Malaysia bersama kami" },
       { value: "100%", label: "Sedia SST + MyInvois" },
-      { value: "2023", label: "Diasaskan di Kuala Lumpur" },
+      { value: "2023", label: "Diasaskan di Negeri Sembilan" },
       { value: "BM · EN", label: "Sokongan tempatan, sentiasa" },
     ],
     story: {
@@ -662,7 +662,7 @@ export const bm: Dictionary = {
       demoTitle: "Tempah demo 20 minit",
       demoSub: "Kami tunjuk bahagian yang penting untuk perniagaan anda",
       office: "Pejabat",
-      officeAddress: "Wisma KFC, Jln Sultan Ismail, KL",
+      officeAddress: "Bandar Sri Sendayan, Negeri Sembilan",
       officeSub: "Mengikut temujanji — telefon dahulu",
     },
     faqEyebrow: "FAQ Hubungi",

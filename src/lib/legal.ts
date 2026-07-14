@@ -1,10 +1,12 @@
 export const LEGAL_VERSION = "1.0";
-export const LEGAL_LAST_UPDATED = "9 June 2026";
-export const LEGAL_LAST_UPDATED_BM = "9 Jun 2026";
+export const LEGAL_LAST_UPDATED = "14 July 2026";
+export const LEGAL_LAST_UPDATED_BM = "14 Julai 2026";
 
-export const COMPANY_NAME = "BukuCloud Sdn Bhd";
+export const COMPANY_NAME = "Fasttrade Ventures";
 export const COMPANY_ADDRESS =
-  "Wisma KFC, Jln Sultan Ismail, 50250 Kuala Lumpur, Malaysia";
+  "Bandar Sri Sendayan, 71950 Sendayan, Negeri Sembilan, Malaysia";
+/** Keep product brand distinct from operating company in UI copy. */
+export const PRODUCT_NAME = "BukuCloud";
 export const COMPANY_REGISTRATION = "202401234567 (1234567-X)";
 
 export const DPO_EMAIL = "dpo@bukucloud.com";

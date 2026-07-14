@@ -13,6 +13,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Free Startup tier. RM 49/mo Solo, RM 99/mo Growth (most popular), RM 219/mo Corporate, custom Enterprise. Practice plans for accountants from RM 99/mo. Annual billing saves ~17%.",
   path: "/pricing",
+  alternateMsPath: "/ms/harga",
   keywords: [
     "BukuCloud pricing",
     "Malaysian accounting software pricing",
