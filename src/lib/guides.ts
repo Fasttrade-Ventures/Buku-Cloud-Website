@@ -1,3 +1,5 @@
+import { REGISTER_URL } from "./site";
+
 export type GuideFaq = { q: string; a: string };
 export type GuideSection = { heading: string; body: string[] };
 export type GuideRelated = { label: string; href: string };
@@ -73,7 +75,7 @@ export const GUIDES: Guide[] = [
         a: "It is Malaysia-first: SST, local support, and MyInvois preparation are first-class product decisions, not afterthoughts.",
       },
     ],
-    ctaPrimary: { label: "Start free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Start free", href: REGISTER_URL },
     ctaSecondary: { label: "See pricing", href: "/pricing" },
     relatedLinks: [
       { label: "Features overview", href: "/features" },
@@ -192,7 +194,7 @@ export const GUIDES: Guide[] = [
         a: "Invite them for free or connect through Practice console so year-end stays in one place.",
       },
     ],
-    ctaPrimary: { label: "Start free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Start free", href: REGISTER_URL },
     ctaSecondary: { label: "Talk migration", href: "/contact" },
     relatedLinks: [
       { label: "Features overview", href: "/features" },
@@ -252,7 +254,7 @@ export const GUIDES: Guide[] = [
         a: "Yes. Invite them as firm staff or via Practice console so they see the same books you use daily.",
       },
     ],
-    ctaPrimary: { label: "Try invoicing free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Try invoicing free", href: REGISTER_URL },
     ctaSecondary: { label: "MyInvois overview", href: "/e-invoice" },
     relatedLinks: [
       { label: "Features overview", href: "/features" },
@@ -312,7 +314,7 @@ export const GUIDES: Guide[] = [
         a: "Solo businesses often go live in days; denser books need a planned cutover. Book a walkthrough if you want a guided path.",
       },
     ],
-    ctaPrimary: { label: "Start free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Start free", href: REGISTER_URL },
     ctaSecondary: { label: "Book a walkthrough", href: "/contact" },
     relatedLinks: [
       { label: "Features overview", href: "/features" },
@@ -479,7 +481,7 @@ export const GUIDES: Guide[] = [
         a: "Spot-check five issued invoices, five credit notes, and compare sales tax report totals to bank deposits for the period. Fifteen minutes beats a letter from customs.",
       },
     ],
-    ctaPrimary: { label: "Try invoicing free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Try invoicing free", href: REGISTER_URL },
     ctaSecondary: { label: "SST invoicing guide", href: "/guides/sst-invoicing-malaysia" },
     relatedLinks: [
       { label: "Features overview", href: "/features" },
@@ -760,7 +762,7 @@ export const GUIDES: Guide[] = [
         a: "If you are a BukuCloud customer with a measurable outcome, contact us — we prefer specifics (time saved, headcount scaled) over generic praise.",
       },
     ],
-    ctaPrimary: { label: "Start free", href: "https://app.bukucloud.com/register" },
+    ctaPrimary: { label: "Start free", href: REGISTER_URL },
     ctaSecondary: { label: "See features", href: "/features" },
     relatedLinks: [
       { label: "Pricing plans", href: "/pricing" },

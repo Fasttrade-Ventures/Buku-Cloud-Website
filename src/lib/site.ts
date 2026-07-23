@@ -1,5 +1,10 @@
+const APP_URL_DEFAULT =
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:8000"
+    : "https://app.bukucloud.com";
+
 export const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL ?? "http://127.0.0.1:8000";
+  process.env.NEXT_PUBLIC_APP_URL ?? APP_URL_DEFAULT;
 
 export const REGISTER_URL = `${APP_URL}/register`;
 export const REGISTER_PRACTICE_URL = `${APP_URL}/register/practice`;

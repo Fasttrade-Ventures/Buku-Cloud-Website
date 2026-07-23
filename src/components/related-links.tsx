@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { REGISTER_URL } from "@/lib/site";
 
 export type RelatedLink = { label: string; href: string };
 
@@ -49,7 +50,7 @@ export function GuideHubLinks() {
     },
     { label: "Customer stories", href: "/guides/customer-stories" },
     { label: "See pricing", href: "/pricing" },
-    { label: "Start free", href: "https://app.bukucloud.com/register" },
+    { label: "Start free", href: REGISTER_URL },
   ];
   return (
     <section className="border-t border-border bg-bg-cream">

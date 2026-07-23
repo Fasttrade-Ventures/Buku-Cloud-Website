@@ -1,14 +1,8 @@
 import Link from "next/link";
 import type { Guide } from "@/lib/guides";
-import { REGISTER_URL } from "@/lib/site";
 import { Button, Eyebrow, Section } from "@/components/ui";
 import { Faq } from "@/components/faq";
 import { RelatedLinks } from "@/components/related-links";
-
-function resolveHref(href: string): string {
-  if (href.includes("app.bukucloud.com/register")) return REGISTER_URL;
-  return href;
-}
 
 export function GuideArticle({ guide }: { guide: Guide }) {
   return (
@@ -27,7 +21,7 @@ export function GuideArticle({ guide }: { guide: Guide }) {
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Button
-            href={resolveHref(guide.ctaPrimary.href)}
+            href={guide.ctaPrimary.href}
             size="lg"
             external={guide.ctaPrimary.href.startsWith("http")}
           >
